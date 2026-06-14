@@ -6,7 +6,7 @@
 <title>Commonwealth Accountability Board</title>
 <link rel="icon" href="data:,">
 <style>
-:root{--page:#faf9f6;--ink:#26241f;--muted:#6b6962;--board:#f3f1ec}
+:root{--page:#faf9f6;--ink:#26241f;--muted:#6b6962;--board:#f3f1ec;--board-min:1200px}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--page);color:var(--ink);font-family:-apple-system,system-ui,"Helvetica Neue",Arial,sans-serif;line-height:1.6}
 .wrap{max-width:960px;margin:0 auto;padding:28px 22px 60px}
@@ -16,8 +16,8 @@ p.lede{font-size:15px;color:#4a4843;margin:0 0 18px;max-width:780px}
 .board-actions{display:flex;gap:10px;margin:0 0 12px}
 .board-actions a,.backtop a{color:#34302a;border:1px solid #c8c3b8;background:#fffdfa;border-radius:6px;padding:6px 10px;text-decoration:none;font-size:13px;font-weight:500}
 .board-actions a:hover,.backtop a:hover{border-color:#918a7c}
-.board-stage{width:96vw;max-width:2400px;position:relative;left:50%;transform:translateX(-50%);margin-top:12px;overflow:hidden;background:var(--board);border-radius:10px}
-svg#cab{width:100%;aspect-ratio:16/9;height:auto;display:block;overflow:hidden;background:var(--board);touch-action:pan-x pan-y}
+.board-stage{width:96vw;max-width:2400px;position:relative;left:50%;transform:translateX(-50%);margin-top:12px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;background:var(--board);border-radius:10px}
+svg#cab{width:100%;min-width:var(--board-min);max-width:none;aspect-ratio:16/9;height:auto;display:block;overflow:hidden;background:var(--board);touch-action:pan-x pan-y}
 text.lbl{paint-order:stroke;stroke:#faf9f6;stroke-width:3.5px;stroke-linejoin:round;fill:#26241f;font-size:13px;pointer-events:none}
 text.hl{font-size:14px;font-weight:600;fill:#16150f}
 .dim{opacity:.08}
@@ -43,8 +43,8 @@ g.nd.pinned .pin-ring{opacity:1}
 .lgd b{width:20px;border-top:2px solid;display:inline-block;font-size:0}
 .legend-hit{filter:drop-shadow(0 0 3px rgba(22,21,15,.35))}
 .backtop{margin:14px 2px 0}
-@media (max-width:900px){.wrap{padding:22px 18px 50px}p.lede{max-width:none}.board-stage{width:100vw;overflow-x:auto;border-radius:0}.board-stage svg#cab{width:1100px;max-width:none}}
-@media (max-width:640px){.wrap{padding:18px 14px 44px}h1{font-size:20px}p.lede{font-size:14px}.board-stage svg#cab{width:940px}.hint{text-align:left}.lgd{grid-template-columns:1fr;gap:13px}.legend-group{gap:7px 12px}}
+@media (max-width:900px){.wrap{padding:22px 18px 50px}p.lede{max-width:none}.board-stage{width:100vw;border-radius:0}}
+@media (max-width:640px){.wrap{padding:18px 14px 44px}h1{font-size:20px}p.lede{font-size:14px}.hint{text-align:left}.lgd{grid-template-columns:1fr;gap:13px}.legend-group{gap:7px 12px}}
 </style>
 </head>
 <body>
@@ -215,7 +215,7 @@ var N=[
 {id:'penate',t:'victim',l:"Rolando Penate"}];
 var layoutPins={
 IMSP:[285,410],IBPD:[1040,500],ICANTON:[955,365],ISTOUGHTON:[455,135],IAG:[1030,145],INORFOLK:[865,245],
-IBROOKLINE:[560,235],ISHS:[685,58],ICHS:[865,135],IQHS:[1080,72],INHS:[1260,185],ISJC:[700,24],
+IBROOKLINE:[560,235],ISHS:[685,58],ICHS:[865,135],IQHS:[1080,72],INHS:[1260,185],ISJC:[700,42],
 INCOURT:[1010,310],ICFD:[1060,430],ICSB:[1130,395],IPOST:[410,500],OCME:[1135,235],
 CROOT:[410,315],CBIRCH:[635,195],CREAD:[755,380],CWALSHE:[655,535],CACAD:[330,585],
 jackson:[580,255],little:[645,260],yannetti:[575,455],alessi:[720,455],lally:[795,255],brennan:[860,295],
@@ -665,8 +665,15 @@ var sim=d3.forceSimulation(N)
 .force('charge',d3.forceManyBody().strength(-350))
 .force('collide',d3.forceCollide().radius(function(d){return d.k?38:22;}))
 .force('x',d3.forceX(800).strength(0.035)).force('y',d3.forceY(450).strength(0.035));
+function clampNode(d){
+var pad=d.k?30:80;
+d.x=Math.max(pad,Math.min(1600-pad,d.x));
+d.y=Math.max(pad,Math.min(900-pad,d.y));
+if(d.fx!=null)d.fx=Math.max(pad,Math.min(1600-pad,d.fx));
+if(d.fy!=null)d.fy=Math.max(pad,Math.min(900-pad,d.fy));
+}
 sim.on('tick',function(){
-node.attr('transform',function(d){if(!d.k){d.x=Math.max(80,Math.min(1520,d.x));d.y=Math.max(80,Math.min(820,d.y));}return 'translate('+d.x+','+d.y+')';});
+node.attr('transform',function(d){clampNode(d);return 'translate('+d.x+','+d.y+')';});
 node.each(placeLabel);
 link.attr('x1',function(d){return d.source.x;}).attr('y1',function(d){return d.source.y;}).attr('x2',function(d){return d.target.x;}).attr('y2',function(d){return d.target.y;});
 });
@@ -679,6 +686,14 @@ if(ev.type&&ev.type.indexOf('touch')===0)return ev.touches&&ev.touches.length>1;
 return true;
 }
 var zoom=d3.zoom().filter(zoomFilter).scaleExtent([0.25,8]).on('zoom',function(ev){d3.select('#view').attr('transform',ev.transform);});svg.call(zoom);
+function centerInitialBoard(){
+var stage=document.querySelector('.board-stage'),svgEl=document.getElementById('cab');
+if(!stage||!svgEl||stage.scrollWidth<=stage.clientWidth+1)return;
+var scale=svgEl.getBoundingClientRect().width/1600;
+var target=700*scale-stage.clientWidth/2;
+stage.scrollLeft=Math.max(0,Math.min(stage.scrollWidth-stage.clientWidth,target));
+}
+requestAnimationFrame(centerInitialBoard);
 var lg=d3.select('#lg');
 function legendGroup(title){
 var group=lg.append('div').attr('class','legend-group').attr('aria-label',title);
