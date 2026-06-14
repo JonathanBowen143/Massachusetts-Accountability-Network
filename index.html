@@ -689,8 +689,7 @@ var zoom=d3.zoom().filter(zoomFilter).scaleExtent([0.25,8]).on('zoom',function(e
 function centerInitialBoard(){
 var stage=document.querySelector('.board-stage'),svgEl=document.getElementById('cab');
 if(!stage||!svgEl||stage.scrollWidth<=stage.clientWidth+1)return;
-var scale=svgEl.getBoundingClientRect().width/1600;
-var target=700*scale-stage.clientWidth/2;
+var target=(stage.scrollWidth-stage.clientWidth)/2;
 stage.scrollLeft=Math.max(0,Math.min(stage.scrollWidth-stage.clientWidth,target));
 }
 requestAnimationFrame(centerInitialBoard);
