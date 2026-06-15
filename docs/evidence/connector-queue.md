@@ -1,6 +1,6 @@
 # Connector Queue
 
-Last updated: June 13, 2026.
+Last updated: June 14, 2026.
 
 This queue is the holding area between evidence ingestion and graph edits. It prevents the board from becoming either under-connected or over-claimed.
 
@@ -13,6 +13,14 @@ Status: `implemented`.
 Evidence: `index.html` draws nodes with `k:'victimAnchor'` as larger centered murdered-person anchors and uses regular `t:'victim'` nodes for smaller person-level victim/exoneree nodes.
 
 Decision: Keep the larger Root, Birchmore, O'Keefe, Walshe, and Delgado-Garcia victim anchors as a style choice for navigation and moral focus. Do not let size imply blame, certainty, or evidence strength. The legend now names this as `Victim Anchor`.
+
+### Victim-Centered Layout Scope
+
+Status: `active layout doctrine`.
+
+Evidence: `docs/evidence/victim-centered-layout.md`; current `index.html` layout pins and victim-anchor visual encoding.
+
+Decision: Keep the public board victim-centered. Government nodes should provide connective structure across victim lanes, not become the primary organizing hierarchy. Do not add police units, court actors, DA substructures, or oversight bodies merely to complete an institutional chart. Add or emphasize them when they explain a victim-centered connector, repeated public actor, jurisdictional path, court/prosecution role, discipline, medical-examiner handling, or cross-lane institutional overlap. If a government-first presentation becomes necessary later, build it as a separate institutional view rather than replacing this board.
 
 ### Public-Role Label Normalization
 

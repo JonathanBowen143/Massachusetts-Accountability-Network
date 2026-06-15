@@ -8,6 +8,7 @@ This repository lives on local disk at `~/Developer/Massachusetts Accountability
 ## Layout
 - `index.html` — the board page and graph data. Edit this directly; pushing deploys it. GitHub Pages requires this exact filename, so it is not renamed.
 - `docs/evidence/` — source ledger, connector queue, and victim-anchor mining notes for evidence-backed graph changes.
+- `docs/evidence/victim-centered-layout.md` — layout doctrine: victims organize the map; government nodes provide connective structure.
 - `docs/evidence/unsolved-homicide-triage.md` — intake rules for unsolved murder leads before they become graph candidates.
 - `docs/karen-read-witness-ledger.md` — documented witness ledger for Karen Read's first trial and retrial, separated from graph-add decisions.
 - `docs/read-root-birchmore-connectors.md` — source notes for the Read / O'Keefe / Root / Birchmore connector pass.
@@ -21,6 +22,8 @@ If older iCloud or temporary copies are found, compare them against this reposit
 
 ## Reading the board
 Large purple person nodes are victim anchors. They mark the murdered people at the center of the board's current major Norfolk County and statewide accountability lanes. Size is not an evidence-strength score and should not be read as a claim of blame or certainty.
+
+The board is victim-centered rather than institution-centered. Government offices, courts, police departments, and oversight bodies are included to explain how victim lanes intersect; they are not meant to form a complete government organizational chart.
 
 ## Deploy
 Pushed to GitHub (`JonathanBowen143/Massachusetts-Accountability-Network`) and served free via GitHub Pages, which auto-rebuilds on every push to `main`:
