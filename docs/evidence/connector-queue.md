@@ -1,6 +1,6 @@
 # Connector Queue
 
-Last updated: June 14, 2026.
+Last updated: June 15, 2026.
 
 This queue is the holding area between evidence ingestion and graph edits. It prevents the board from becoming either under-connected or over-claimed.
 
@@ -482,13 +482,13 @@ Decision: The MSP, Read/O'Keefe, O'Connell, and SJC connectors are supported eno
 
 ### Coleen Crawford
 
-Status: `graph-ready for Root/Fanning/Bukhenik digital-evidence connectors; discovery-motion expansion still needs docket-copy verification`.
+Status: `graph-ready for Root/Fanning/Bukhenik digital-evidence connectors and a narrow Read/O'Keefe Canton sallyport-DVR connector; edit/tamper claim remains allegation-only`.
 
-Evidence: `WEB-READ-RETRIAL-NORFOLK-STAFF-2025`; `WEB-READ-BIRCHMORE-DISCOVERY-MOTION-2025`; `WEB-NDAO-CRAWFORD-TULLY-DIGITAL-EVIDENCE-2019`; `ROOT-BUKHENIK-CRAWFORD-FANNING-EMAIL-2020`.
+Evidence: `WEB-READ-RETRIAL-NORFOLK-STAFF-2025`; `WEB-READ-CRAWFORD-CANTON-SALLYPORT-DVR-2025`; `WEB-READ-BIRCHMORE-DISCOVERY-MOTION-2025`; `WEB-NDAO-CRAWFORD-TULLY-DIGITAL-EVIDENCE-2019`; `ROOT-BUKHENIK-CRAWFORD-FANNING-EMAIL-2020`.
 
-Current board state: Crawford is represented in the Read/O'Keefe lane, Norfolk DA employment context, Root context, a Fanning business/community connector, a Bukhenik communication connector, and a narrow Tully professional-training connector.
+Current board state: Crawford is represented in the Read/O'Keefe lane, Norfolk DA employment context, Canton Police sallyport-DVR evidence context, Root context, a Fanning business/community connector, a Bukhenik communication connector, and a narrow Tully professional-training connector.
 
-Decision: The Read/O'Keefe and Norfolk DA connectors are supported by witness-list reporting. The Root, Fanning, and Bukhenik connectors are supported by the Root/Brookline correspondence packet as digital-evidence handling and communication connectors. The Tully connector is supported only as a professional/training overlap from the Norfolk DA homicide-conference release. The Read/Birchmore discovery motion is a lead for broader cross-case work, but it needs an official docket copy before public graph expansion.
+Decision: The Read/O'Keefe and Norfolk DA connectors are supported by witness-list reporting. The Canton Police connector is supported only as a neutral sallyport-DVR evidence-handling/review overlap from defense filing materials and reporting; it must not be read as a finding that Crawford edited, altered, manipulated, or tampered with video. The Root, Fanning, and Bukhenik connectors are supported by the Root/Brookline correspondence packet as digital-evidence handling and communication connectors. The Tully connector is supported only as a professional/training overlap from the Norfolk DA homicide-conference release. The Read/Birchmore discovery motion is a lead for broader cross-case work, but it needs an official docket copy before public graph expansion.
 
 ### Norfolk County DA Staff Beyond Morrissey
 

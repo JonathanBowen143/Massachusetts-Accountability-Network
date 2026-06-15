@@ -1,6 +1,6 @@
 # Source Ledger
 
-Last updated: June 13, 2026.
+Last updated: June 15, 2026.
 
 This ledger records source surfaces reviewed or identified for the board. It is intentionally separate from `index.html`; evidence belongs here first, graph edges second.
 
@@ -319,6 +319,32 @@ The 2025 retrial witness-list reporting identifies Coleen Crawford as affiliated
 Board implications:
 
 Keep Steve Nelson documented as a Norfolk DA office witness-list actor, but do not keep him on the visible public board based on witness-list presence alone. Use this source to support the existing Prince `CREAD`/`IMSP` and Crawford `CREAD`/`INORFOLK` connectors. Do not use witness-list presence alone to imply wrongdoing, investigation control, or testimony content.
+
+## WEB-READ-CRAWFORD-CANTON-SALLYPORT-DVR-2025
+
+Status: `ingested`, `graph-ready for narrow Crawford-to-Canton Police evidence-handling connector; editing allegation remains source-note-only`.
+
+Source titles:
+
+WCVB, `Karen Read's defense asks court to order prosecution to pay expert's $12,000 bill`, updated January 23, 2025: `https://www.wcvb.com/article/karen-reads-defense-asks-court-to-order-prosecution-to-pay-experts-bill/63527886`.
+
+WHDH 7News filing packet, `Defendant Karen Read's Motion to Dismiss for Extraordinary Governmental Misconduct`, hosted February 2025: `https://whdh.com/wp-content/uploads/sites/3/2025/02/DOC022725.pdf`.
+
+Scribd public mirror, `Commonwealth v. Karen Read - Defendant Motion To Recover Expert Costs`: `https://www.scribd.com/document/819339298/Commonwealth-v-Karen-Read-Defendant-Motion-to-Recover-Expert-Costs`.
+
+Extracted facts:
+
+WCVB reports that Read's defense asked the court to order the prosecution to pay expert Matthew Erickson's costs after he traveled to examine the Canton Police Department video-surveillance system. The article attributes to the defense motion claims that CPD sallyport footage omitted a 42-minute window when Read's SUV arrived, that another sallyport camera appeared inverted, that Erickson found only 30 days of video history on the system, and that activity logs could not be recovered.
+
+The WHDH-hosted motion-to-dismiss packet alleges broader sallyport-video discovery problems, including piecemeal CPD Exacq Vision DVR productions, an April 2024 share link for additional sallyport footage, and the defense request for Erickson to access the CPD DVR system. The same filing names Coleen Crawford among witnesses the defense said it would need at an evidentiary hearing about the asserted discovery and video issues. This is a defense allegation, not an adjudicated finding.
+
+The Scribd mirror of Read's motion to recover expert costs says Erickson visited CPD on December 12, 2024, to extract or review DVR material and was met by Coleen Crawford, described there as a Norfolk District Attorney's Office multimedia director and certified forensic video technician. The same mirror says defense counsel had spoken with Crawford before the trip about the agreed extraction parameters. Treat this mirror as a public copy of a defense filing unless an official docket copy is later recovered.
+
+None of the reviewed sources proves that Crawford edited, altered, manipulated, or tampered with CPD sallyport video. The sources support documenting a Crawford/Read/O'Keefe/Canton Police sallyport-DVR evidence-handling overlap and keeping the stronger edit/tamper claim as an allegation or lead pending a transcript, order, official filing, or underlying email/report.
+
+Board implications:
+
+Add a neutral `case` connector between Coleen Crawford and Canton Police Department for the Read/O'Keefe sallyport-DVR evidence lane. Do not add a separate Matthew Erickson node from this pass alone, because his public-board connector set would be thin and defense-expert status is already documented in the witness ledger. Do not create an `edited video` label, misconduct connector, or Crawford-to-Proctor claim from social-media snippets without primary-source support.
 
 ## WEB-READ-DEFENSE-TEAM-JACKSON-YANNETTI-2024-2025
 
